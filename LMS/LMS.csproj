@@ -22,6 +22,7 @@
         <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
         <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugSymbols>True</DebugSymbols>
@@ -34,6 +35,7 @@
         <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
         <AndroidLinkMode>None</AndroidLinkMode>
         <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+	    <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <DebugSymbols>True</DebugSymbols>
@@ -54,13 +56,14 @@
         <Reference Include="System.Core" />
         <Reference Include="Mono.Android" />
     </ItemGroup>
-    <ItemGroup>
-        <Compile Include="Activities\MainActivity.cs" />
-        <Compile Include="Prototypes\CategoryFoldersManager.cs" />
-        <Compile Include="Prototypes\FooterMenu.cs" />
-        <Compile Include="Resources\Resource.Designer.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
+	<ItemGroup>
+		<Compile Include="Activities\MainActivity.cs"/>
+		<Compile Include="Prototypes\Folder.cs"/>
+		<Compile Include="Prototypes\FolderRecViewAdapter.cs"/>
+		<Compile Include="Prototypes\FooterMenu.cs"/>
+		<Compile Include="Resources\Resource.Designer.cs"/>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+	</ItemGroup>
     <ItemGroup>
         <None Include="Resources\AboutResources.txt" />
         <None Include="Properties\AndroidManifest.xml" />
@@ -80,9 +83,14 @@
         <AndroidResource Include="Resources\values\strings.xml" />
         <AndroidResource Include="Resources\values\styles.xml" />
     </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3"/>
+		<PackageReference Include="Xamarin.AndroidX.ConstraintLayout" Version="2.1.1.2"/>
+		<PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.UI" Version="1.0.0.11"/>
+		<PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.3.1.3"/>
+		<PackageReference Include="Xamarin.AndroidX.RecyclerView" Version="1.2.1.3"/>
+		<PackageReference Include="Xamarin.Google.Android.Material" Version="1.4.0.4"/>
+	</ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
       Other similar extension points exist, see Microsoft.Common.targets.

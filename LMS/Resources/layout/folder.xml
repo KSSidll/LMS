@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ImageButton xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="150dp"
-             android:layout_height="150dp"
-             android:layout_margin="5dp"
-             android:background="@drawable/folder_style"
-/>
+<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="5dp"
+		android:id="@+id/folder_parent"
+>
+	<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:orientation="vertical"
+			app:layout_constraintDimensionRatio="85:100"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+	>
+
+		<ImageView android:layout_width="match_parent"
+		           android:layout_height="0dp"
+		           app:layout_constraintHeight_percent="0.85"
+		           android:background="@drawable/folder_style"
+		           android:id="@+id/folder_image"
+
+		/>
+
+		<TextView android:layout_width="match_parent"
+		          android:layout_height="0dp"
+		          app:layout_constraintHeight_percent="0.15"
+		          android:gravity="center"
+		          android:text="test"
+		          android:textColor="@color/grayForeground"
+		          android:autoSizeTextType="uniform"
+		          android:id="@+id/folder_name"
+		          app:layout_constraintBottom_toBottomOf="parent"
+		          app:layout_constraintTop_toBottomOf="@id/folder_image"/>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+	
+</androidx.constraintlayout.widget.ConstraintLayout>
