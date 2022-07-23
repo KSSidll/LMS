@@ -23,7 +23,7 @@ namespace LMS
 		/// <summary>
 		/// Sets the maximum amount of folders in a row and resizes them to fit
 		/// </summary>
-		/// <param name="inRow">A number of folders that fit in 1 row</param>
+		/// <param name="inRow">A number of folders to fit in 1 row</param>
 		public void SetMaxInRow(int inRow)
 		{
 			_folderHolder.ColumnCount = inRow;
