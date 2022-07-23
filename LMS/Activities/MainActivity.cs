@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
-using Android.Runtime;
 using Android.Widget;
 
 namespace LMS
@@ -12,8 +11,15 @@ namespace LMS
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+            
+            var footerMenu = new FooterMenu(FindViewById<LinearLayout>(Resource.Id.activity_main_footer_menu));
+            var categoryFoldersManager = new CategoryFoldersManager(this);
+            categoryFoldersManager.AddFolder();
+
+            var addfolder = FindViewById<Button>(Resource.Id.add_folder_placeholder);
+            addfolder.Click += (sender, args) => categoryFoldersManager.AddFolder();
+
         }
     }
 }
