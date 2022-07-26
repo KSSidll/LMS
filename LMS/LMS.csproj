@@ -57,10 +57,11 @@
         <Reference Include="Mono.Android" />
     </ItemGroup>
 	<ItemGroup>
-		<Compile Include="Activities\MainActivity.cs"/>
+		<Compile Include="Fragments\FolderFragment.cs"/>
+		<Compile Include="MainActivity.cs"/>
 		<Compile Include="Prototypes\Folder.cs"/>
+		<Compile Include="Prototypes\FolderFragmentAdapter.cs"/>
 		<Compile Include="Prototypes\FolderRecViewAdapter.cs"/>
-		<Compile Include="Prototypes\FooterMenu.cs"/>
 		<Compile Include="Resources\Resource.Designer.cs"/>
 		<Compile Include="Properties\AssemblyInfo.cs"/>
 	</ItemGroup>
@@ -71,13 +72,11 @@
     </ItemGroup>
     <ItemGroup>
         <AndroidResource Include="Resources\drawable\folder_style.xml" />
-        <AndroidResource Include="Resources\drawable\footer_menu_button_selector.xml" />
         <AndroidResource Include="Resources\layout\activity_main.xml">
             <SubType>Designer</SubType>
         </AndroidResource>
-        <AndroidResource Include="Resources\layout\activity_main_content.xml" />
         <AndroidResource Include="Resources\layout\folder.xml" />
-        <AndroidResource Include="Resources\layout\main_footer_menu_content.xml" />
+	    <AndroidResource Include="Resources\layout\folder_fragment.xml"/>
         <AndroidResource Include="Resources\values\colors.xml" />
         <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
         <AndroidResource Include="Resources\values\strings.xml" />

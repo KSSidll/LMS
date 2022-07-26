@@ -12,10 +12,11 @@
 
 	</ActionMenuView>
 
-	<include layout="@layout/activity_main_content"
-	         android:layout_width="match_parent"
-	         android:layout_height="0dp"
-	         android:layout_weight="0.84"
+	<androidx.fragment.app.FragmentContainerView
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="0.84"
+			android:id="@+id/folder_fragment"
 	/>
 
 	<HorizontalScrollView android:layout_width="match_parent"
@@ -24,7 +25,7 @@
 	                      android:scrollbars="none"
 	                      android:padding="5dp"
 	>
-			<include layout="@layout/main_footer_menu_content"/>
+
 	</HorizontalScrollView>
 	
 

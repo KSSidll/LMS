@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Android.Content;
 using Android.Views;
 using Android.Widget;
 using AndroidX.ConstraintLayout.Widget;
@@ -8,10 +9,12 @@ namespace LMS.Prototypes;
 
 public class FolderRecViewAdapter : RecyclerView.Adapter
 {
+	private Context _context;
 	private List<Folder> _folders = new List<Folder>();
 
-	public FolderRecViewAdapter()
+	public FolderRecViewAdapter(Context context)
 	{
+		_context = context;
 	}
 
 	public override int ItemCount => _folders.Count;
